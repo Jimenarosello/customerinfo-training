@@ -52,6 +52,36 @@
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.bbva.jee.arq.spring.core</groupId>
+      <artifactId>arq-spring-servicing-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.bbva.jee.arq.spring.core</groupId>
+      <artifactId>arq-spring-connector-rest</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.bbva.jee.arq.spring.core</groupId>
+      <artifactId>arq-spring-servicing-core</artifactId>
+      <version>${arq-spring-servicing-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bbva.jee.arq.spring.core</groupId>
+      <artifactId>arq-spring-restutils</artifactId>
+      <version>${arq-spring-restutils.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bbva.jee.arq.spring.core</groupId>
+      <artifactId>arq-spring-core-api</artifactId>
+      <version>${arq-spring-core-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.16</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -67,6 +97,11 @@
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
               <version>1.2.0.Final</version>
+            </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.16.16</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
@@ -153,6 +188,45 @@
           <source>${arq.spring.jdk.version}</source>
           <target>${arq.spring.jdk.version}</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.bbva.aso.plugins</groupId>
+        <artifactId>kermit-maven-plugin</artifactId>
+        <version>1.0.1</version>
+        <configuration>
+          <packageName>com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0</packageName>
+          <lombok>true</lombok>
+          <transactions>
+            <transaction>
+              <copy>ACHPT001-01-AR.xml</copy>
+              <protocol>APX</protocol>
+              <version>01</version>
+              <name>ACHPT001</name>
+            </transaction>
+          </transactions>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.25.0-GA</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
     <finalName>${project.artifactId}</finalName>
