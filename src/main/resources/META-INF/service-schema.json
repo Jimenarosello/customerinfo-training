@@ -1,0 +1,13 @@
+{
+	"services": [
+		{
+			"logicalId": "riskLimitsListBehavioralEvaluationsV0",
+			"registryId": "SMGG20211896",
+			"input": {
+				"parameters": [],
+				"payload": []
+			},
+			"output": []
+		}
+	]
+}

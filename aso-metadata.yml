@@ -1,0 +1,12 @@
+aso-metadata:
+    uuaa            : achp
+    sn              : SNAR20210087
+    name            : risk-limits
+    type            : service
+    country         : ar
+    version         : 0.1.0-SNAPSHOT
+    platformVersion : R4
+    flavour         : old
+    namespace       : ar.achp.app-id-585450.dsg
+    repoName        : RiskLimitsBehavioralEvaluationsV0
+    multilocal      : false

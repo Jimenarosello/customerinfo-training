@@ -1,0 +1,18 @@
+package com.bbva.achp.risklimitsbehavioralevaluationsv0.facade.v0.mapper;
+
+import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dto.BDtoOutListBehavioralEvaluationsGet;
+import com.bbva.achp.risklimitsbehavioralevaluationsv0.facade.v0.dto.DtoOutListBehavioralEvaluationsGet;
+import java.util.List;
+import org.mapstruct.Mapper;
+
+@Mapper
+public interface ListBehavioralEvaluationsGetMapper {
+
+  BDtoOutListBehavioralEvaluationsGet dtoOutListBehavioralEvaluationsGetToBDtoOutListBehavioralEvaluationsGet(DtoOutListBehavioralEvaluationsGet dtoOutListBehavioralEvaluationsGet);
+
+  DtoOutListBehavioralEvaluationsGet bDtoOutListBehavioralEvaluationsGetToDtoOutListBehavioralEvaluationsGet(BDtoOutListBehavioralEvaluationsGet bDtoOutListBehavioralEvaluationsGet);
+
+  List<BDtoOutListBehavioralEvaluationsGet> dtoOutListListBehavioralEvaluationsGetToBDtoOutListListBehavioralEvaluationsGet(List<DtoOutListBehavioralEvaluationsGet> dtoOutListListBehavioralEvaluationsGet);
+
+  List<DtoOutListBehavioralEvaluationsGet> bDtoOutListListBehavioralEvaluationsGetToDtoOutListListBehavioralEvaluationsGet(List<BDtoOutListBehavioralEvaluationsGet> bDtoOutListListBehavioralEvaluationsGet);
+}
