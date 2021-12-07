@@ -21,18 +21,6 @@
   <dependencies>
     <!-- INICIO Arquitectura Servicios -->
     <dependency>
-      <groupId>com.bbva.jee.arq.spring.core</groupId>
-      <artifactId>arq-spring-restutils</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.bbva.jee.arq.spring.core</groupId>
-      <artifactId>arq-spring-servicing-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.bbva.jee.arq.spring.core</groupId>
-      <artifactId>arq-spring-core-api</artifactId>
-    </dependency>
-    <dependency>
    		<groupId>org.slf4j</groupId>
    		<artifactId>jcl-over-slf4j</artifactId>
    		<version>${slf4j.version}</version>
@@ -51,10 +39,6 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.bbva.jee.arq.spring.core</groupId>
-      <artifactId>arq-spring-servicing-core</artifactId>
     </dependency>
     <dependency>
       <groupId>com.bbva.jee.arq.spring.core</groupId>
@@ -79,7 +63,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.16</version>
+      <version>1.18.16</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -89,22 +73,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <source>${arq.spring.jdk.version}</source>
           <target>${arq.spring.jdk.version}</target>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>org.mapstruct</groupId>
-              <artifactId>mapstruct-processor</artifactId>
-              <version>1.2.0.Final</version>
-            </path>
-            <path>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>1.16.16</version>
-              <scope>provided</scope>
-            </path>
-          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
@@ -176,6 +148,15 @@
           </execution>
         </executions>
         <configuration>
+          <source>${arq.spring.jdk.version}</source>
+          <target>${arq.spring.jdk.version}</target>
+          <verbose>true</verbose>
+          <Xlint>ignore</Xlint>
+          <forceAjcCompile>true</forceAjcCompile>
+          <sources/><!-- this is important!-->
+          <weaveDirectories>
+            <weaveDirectory>${project.build.directory}/classes</weaveDirectory>
+          </weaveDirectories>
           <complianceLevel>${arq.spring.jdk.version}</complianceLevel>
           <showWeaveInfo>true</showWeaveInfo>
           <encoding>${project.build.sourceEncoding}</encoding>
