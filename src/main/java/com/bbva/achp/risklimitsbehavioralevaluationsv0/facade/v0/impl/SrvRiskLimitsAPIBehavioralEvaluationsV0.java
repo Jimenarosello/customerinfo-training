@@ -18,6 +18,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,11 @@ public class SrvRiskLimitsAPIBehavioralEvaluationsV0 implements ISrvRiskLimitsAP
 
     ListBehavioralEvaluationsGetMapper mapper = Mappers.getMapper(ListBehavioralEvaluationsGetMapper.class);
     List<DtoOutListBehavioralEvaluationsGet> response = mapper.bDtoOutListListBehavioralEvaluationsGetToDtoOutListListBehavioralEvaluationsGet(internalResponse);
+
+    if (response.isEmpty()) {
+      return null;
+    }
+
     ServiceResponseBuilder<List<DtoOutListBehavioralEvaluationsGet>> builder = ServiceResponseOK.data(response);
     return builder.build();
   }

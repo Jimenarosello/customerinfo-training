@@ -30,19 +30,19 @@ import com.bbva.jee.arq.spring.core.host.Transaccion;
  * &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
  * &lt;transaction xmlns=&quot;http://www.w3schools.com&quot; transactionName=&quot;ACHPT001&quot; application=&quot;ACHP&quot; version=&quot;01&quot; country=&quot;AR&quot; language=&quot;ES&quot;&gt;
  * &lt;paramsIn&gt;
- * &lt;parameter order=&quot;1&quot; name=&quot;customerId&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;20&quot;/&gt;
+ * &lt;parameter order=&quot;1&quot; name=&quot;customerId&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;30&quot;/&gt;
  * &lt;/paramsIn&gt;
  * &lt;paramsOut&gt;
- * &lt;parameter order=&quot;1&quot; name=&quot;id&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;10&quot;/&gt;
- * &lt;parameter order=&quot;2&quot; name=&quot;exclusionReasonCode&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;10&quot;/&gt;
- * &lt;parameter order=&quot;3&quot; name=&quot;riskGroup&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;10&quot;/&gt;
- * &lt;parameter order=&quot;4&quot; name=&quot;lastAccreditationDate&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;20&quot;/&gt;
- * &lt;parameter order=&quot;5&quot; name=&quot;totalMonthsPayroll&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;20&quot;/&gt;
- * &lt;parameter order=&quot;6&quot; name=&quot;payrollCompanyCode&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;20&quot;/&gt;
- * &lt;parameter order=&quot;7&quot; name=&quot;numberTotalAccreditations&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;20&quot;/&gt;
- * &lt;parameter order=&quot;8&quot; name=&quot;riskScore&quot; mandatory=&quot;0&quot; type=&quot;Double&quot; size=&quot;20&quot;/&gt;
+ * &lt;parameter order=&quot;1&quot; name=&quot;id&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;8&quot;/&gt;
+ * &lt;parameter order=&quot;2&quot; name=&quot;exclusionReasonCode&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;6&quot;/&gt;
+ * &lt;parameter order=&quot;3&quot; name=&quot;riskGroup&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;2&quot;/&gt;
+ * &lt;parameter order=&quot;4&quot; name=&quot;lastAccreditationDate&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;6&quot;/&gt;
+ * &lt;parameter order=&quot;5&quot; name=&quot;totalMonthsPayroll&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;6&quot;/&gt;
+ * &lt;parameter order=&quot;6&quot; name=&quot;payrollCompanyCode&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;9&quot;/&gt;
+ * &lt;parameter order=&quot;7&quot; name=&quot;numberTotalAccreditations&quot; mandatory=&quot;0&quot; type=&quot;Long&quot; size=&quot;6&quot;/&gt;
+ * &lt;parameter order=&quot;8&quot; name=&quot;riskScore&quot; mandatory=&quot;0&quot; type=&quot;Double&quot; size=&quot;25&quot;/&gt;
  * &lt;dto order=&quot;9&quot; name=&quot;riskSegment&quot; mandatory=&quot;0&quot; package=&quot;com.bbva.actk.dto.risks.RiskSegmentDTO&quot; artifactId=&quot;ACTKC000&quot;&gt;
- * &lt;parameter order=&quot;1&quot; name=&quot;id&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;20&quot;/&gt;
+ * &lt;parameter order=&quot;1&quot; name=&quot;id&quot; mandatory=&quot;0&quot; type=&quot;String&quot; size=&quot;9&quot;/&gt;
  * &lt;/dto&gt;
  * &lt;dto order=&quot;10&quot; name=&quot;lastPayrollIncome&quot; mandatory=&quot;0&quot; package=&quot;com.bbva.actk.dto.risks.LastPayrollIncomeDTO&quot; artifactId=&quot;ACTKC000&quot;&gt;
  * &lt;parameter order=&quot;1&quot; name=&quot;amount&quot; mandatory=&quot;0&quot; type=&quot;Double&quot; size=&quot;20&quot;/&gt;
@@ -75,7 +75,7 @@ public class RequestTransactionAchpt001_1 {
 		/**
 	 * <p>Campo <code>customerId</code>, &iacute;ndice: <code>1</code>, tipo: <code>ALFANUMERICO</code>
 	 */
-	@Campo(indice = 1, nombre = "customerId", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 20, signo = true)
+	@Campo(indice = 1, nombre = "customerId", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 30, signo = true)
 	private String customerId;
 	
 }

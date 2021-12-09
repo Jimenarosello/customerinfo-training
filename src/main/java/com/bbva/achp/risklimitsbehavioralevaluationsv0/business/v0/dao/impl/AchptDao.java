@@ -7,6 +7,7 @@ import com.bbva.jee.arq.spring.core.host.ServicioTransacciones;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -17,6 +18,11 @@ public class AchptDao implements IAchptDao {
 
     @Override
     public List<BDtoOutListBehavioralEvaluationsGet> getCustomerInfo(String customerId) {
-        return servicioTransacciones.invoke(RequestTransactionAchpt001_1.class, customerId);
+        List<BDtoOutListBehavioralEvaluationsGet> response = servicioTransacciones.invoke(RequestTransactionAchpt001_1.class, customerId);
+        if (response == null) {
+            response = Collections.emptyList();
+        }
+
+        return response;
     }
 }

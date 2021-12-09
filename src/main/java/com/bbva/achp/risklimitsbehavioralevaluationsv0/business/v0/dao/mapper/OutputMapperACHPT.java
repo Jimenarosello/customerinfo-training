@@ -15,6 +15,8 @@ public class OutputMapperACHPT implements IMapper<ResponseTransactionAchpt001_1,
     @Override
     public List<BDtoOutListBehavioralEvaluationsGet> map(ResponseTransactionAchpt001_1 response) {
         BDtoOutListBehavioralEvaluationsGet bDtoOutListBehavioralEvaluationsGet = new BDtoOutListBehavioralEvaluationsGet();
+
+        bDtoOutListBehavioralEvaluationsGet.setId(response.getId());
         bDtoOutListBehavioralEvaluationsGet.setExclusionReasonCode(String.valueOf(response.getExclusionReasonCode()));
         bDtoOutListBehavioralEvaluationsGet.setRiskGroup(response.getRiskGroup());
 
@@ -27,6 +29,8 @@ public class OutputMapperACHPT implements IMapper<ResponseTransactionAchpt001_1,
         lastPayrollIncomeGet.setAmount(response.getLastPayrollIncome().getAmount());
         lastPayrollIncomeGet.setCurrency(response.getLastPayrollIncome().getCurrency());
         bDtoOutListBehavioralEvaluationsGet.setLastPayrollIncome(lastPayrollIncomeGet);
+
+        bDtoOutListBehavioralEvaluationsGet.setLastSalaryAccreditation(BigDecimal.valueOf(response.getLastAccreditationDate()));
 
         BDtoOutListBehavioralEvaluationsRiskSegmentGet riskSegmentGet = new BDtoOutListBehavioralEvaluationsRiskSegmentGet();
         riskSegmentGet.setId(response.getRiskSegment().getId());

@@ -1,7 +1,6 @@
 package com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dao.model.achpt001_1;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import com.bbva.jee.arq.spring.core.host.Cabecera;
 import com.bbva.jee.arq.spring.core.host.NombreCabecera;
 
@@ -50,49 +49,49 @@ public class ResponseTransactionAchpt001_1 {
 	/**
 	 * <p>Campo <code>id</code>, &iacute;ndice: <code>1</code>, tipo: <code>ALFANUMERICO</code>
 	 */
-	@Campo(indice = 1, nombre = "id", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 10, signo = true)
+	@Campo(indice = 1, nombre = "id", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 8, signo = true)
 	private String id;
 	
 	/**
 	 * <p>Campo <code>exclusionReasonCode</code>, &iacute;ndice: <code>2</code>, tipo: <code>ENTERO</code>
 	 */
-	@Campo(indice = 2, nombre = "exclusionReasonCode", tipo = TipoCampo.ENTERO, longitudMaxima = 10, signo = true)
-	private Long exclusionReasonCode;
+	@Campo(indice = 2, nombre = "exclusionReasonCode", tipo = TipoCampo.ENTERO, longitudMaxima = 6, signo = true)
+	private Integer exclusionReasonCode;
 	
 	/**
 	 * <p>Campo <code>riskGroup</code>, &iacute;ndice: <code>3</code>, tipo: <code>ALFANUMERICO</code>
 	 */
-	@Campo(indice = 3, nombre = "riskGroup", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 10, signo = true)
+	@Campo(indice = 3, nombre = "riskGroup", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 2, signo = true)
 	private String riskGroup;
 	
 	/**
 	 * <p>Campo <code>lastAccreditationDate</code>, &iacute;ndice: <code>4</code>, tipo: <code>ENTERO</code>
 	 */
-	@Campo(indice = 4, nombre = "lastAccreditationDate", tipo = TipoCampo.ENTERO, longitudMaxima = 20, signo = true)
-	private BigInteger lastAccreditationDate;
+	@Campo(indice = 4, nombre = "lastAccreditationDate", tipo = TipoCampo.ENTERO, longitudMaxima = 6, signo = true)
+	private Integer lastAccreditationDate;
 	
 	/**
 	 * <p>Campo <code>totalMonthsPayroll</code>, &iacute;ndice: <code>5</code>, tipo: <code>ENTERO</code>
 	 */
-	@Campo(indice = 5, nombre = "totalMonthsPayroll", tipo = TipoCampo.ENTERO, longitudMaxima = 20, signo = true)
-	private BigInteger totalMonthsPayroll;
+	@Campo(indice = 5, nombre = "totalMonthsPayroll", tipo = TipoCampo.ENTERO, longitudMaxima = 6, signo = true)
+	private Integer totalMonthsPayroll;
 	
 	/**
 	 * <p>Campo <code>payrollCompanyCode</code>, &iacute;ndice: <code>6</code>, tipo: <code>ALFANUMERICO</code>
 	 */
-	@Campo(indice = 6, nombre = "payrollCompanyCode", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 20, signo = true)
+	@Campo(indice = 6, nombre = "payrollCompanyCode", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 9, signo = true)
 	private String payrollCompanyCode;
 	
 	/**
 	 * <p>Campo <code>numberTotalAccreditations</code>, &iacute;ndice: <code>7</code>, tipo: <code>ENTERO</code>
 	 */
-	@Campo(indice = 7, nombre = "numberTotalAccreditations", tipo = TipoCampo.ENTERO, longitudMaxima = 20, signo = true)
-	private BigInteger numberTotalAccreditations;
+	@Campo(indice = 7, nombre = "numberTotalAccreditations", tipo = TipoCampo.ENTERO, longitudMaxima = 6, signo = true)
+	private Integer numberTotalAccreditations;
 	
 	/**
 	 * <p>Campo <code>riskScore</code>, &iacute;ndice: <code>8</code>, tipo: <code>DECIMAL</code>
 	 */
-	@Campo(indice = 8, nombre = "riskScore", tipo = TipoCampo.DECIMAL, longitudMaxima = 20, signo = true)
+	@Campo(indice = 8, nombre = "riskScore", tipo = TipoCampo.DECIMAL, longitudMaxima = 25, signo = true)
 	private BigDecimal riskScore;
 	
 	/**
