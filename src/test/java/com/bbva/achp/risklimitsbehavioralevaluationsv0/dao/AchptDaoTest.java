@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
+import static utils.TestConstants.OK_ID;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AchptDaoTest {
@@ -40,7 +41,7 @@ public class AchptDaoTest {
     public void givenNoResultsThenReturnEmptyList() {
         when(asoService.invoke(any(), anyString())).thenReturn(null);
 
-        List<BDtoOutListBehavioralEvaluationsGet> response = daoService.getCustomerInfo("customerId");
+        List<BDtoOutListBehavioralEvaluationsGet> response = daoService.getCustomerInfo(OK_ID);
 
         assertNotNull(response);
         assertTrue(response.isEmpty());
@@ -51,9 +52,9 @@ public class AchptDaoTest {
         ResponseTransactionAchpt001_1 asoResponse = new ResponseTransactionAchpt001_1();
         when(asoService.invoke(any(), anyString())).thenReturn(Collections.singletonList(asoResponse));
 
-        List<BDtoOutListBehavioralEvaluationsGet> response = daoService.getCustomerInfo("customerId");
+        List<BDtoOutListBehavioralEvaluationsGet> response = daoService.getCustomerInfo(OK_ID);
 
-        verify(asoService, times(1)).invoke(RequestTransactionAchpt001_1.class, "customerId");
+        verify(asoService, times(1)).invoke(RequestTransactionAchpt001_1.class, OK_ID);
 
         assertNotNull(response);
         assertFalse(response.isEmpty());

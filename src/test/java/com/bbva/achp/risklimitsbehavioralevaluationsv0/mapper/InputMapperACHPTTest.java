@@ -5,6 +5,8 @@ import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dao.model.ach
 import org.junit.Assert;
 import org.junit.Test;
 
+import static utils.TestConstants.OK_ID;
+
 
 public class InputMapperACHPTTest {
 
@@ -12,9 +14,9 @@ public class InputMapperACHPTTest {
 
     @Test
     public void whenInputIsOKThenReturnCorrectRequestClass() {
-        RequestTransactionAchpt001_1 requestTransactionAchpt001_1 = inputMapperACHPT.map("customerId");
+        RequestTransactionAchpt001_1 requestTransactionAchpt001_1 = inputMapperACHPT.map(OK_ID);
 
         Assert.assertNotNull(requestTransactionAchpt001_1);
-        Assert.assertEquals("customerId", requestTransactionAchpt001_1.getCustomerId());
+        Assert.assertEquals(OK_ID, requestTransactionAchpt001_1.getCustomerId());
     }
 }

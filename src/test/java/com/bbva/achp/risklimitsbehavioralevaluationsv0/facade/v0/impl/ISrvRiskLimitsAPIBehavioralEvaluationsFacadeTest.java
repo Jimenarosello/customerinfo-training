@@ -7,6 +7,7 @@ import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dto.BDtoOutLi
 import com.bbva.achp.risklimitsbehavioralevaluationsv0.facade.v0.ISrvRiskLimitsAPIBehavioralEvaluationsV0;
 import com.bbva.achp.risklimitsbehavioralevaluationsv0.facade.v0.dto.DtoOutListBehavioralEvaluationsGet;
 import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
+import com.bbva.jee.arq.spring.core.servicing.gce.BusinessServiceException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -20,9 +21,9 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static utils.TestConstants.*;
 
 public class ISrvRiskLimitsAPIBehavioralEvaluationsFacadeTest {
 
@@ -36,7 +37,7 @@ public class ISrvRiskLimitsAPIBehavioralEvaluationsFacadeTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         BDtoOutListBehavioralEvaluationsGet okResponse = mock(BDtoOutListBehavioralEvaluationsGet.class);
-        when(okResponse.getId()).thenReturn("OK");
+        when(okResponse.getId()).thenReturn(OK_ID);
         when(okResponse.getExclusionReasonCode()).thenReturn("exclusion reason code");
         when(okResponse.getRiskGroup()).thenReturn("risk group");
         when(okResponse.getLastSalaryAccreditation()).thenReturn(BigDecimal.valueOf(123));
@@ -53,15 +54,15 @@ public class ISrvRiskLimitsAPIBehavioralEvaluationsFacadeTest {
         when(riskSegmentGet.getId()).thenReturn("risk segment");
         when(okResponse.getRiskSegment()).thenReturn(riskSegmentGet);
 
-        when(business.riskLimitsListBehavioralEvaluationsV0("OK")).thenReturn(Collections.singletonList(okResponse));
-        when(business.riskLimitsListBehavioralEvaluationsV0("NOT_FOUND")).thenReturn(Collections.emptyList());
+        when(business.riskLimitsListBehavioralEvaluationsV0(OK_ID)).thenReturn(Collections.singletonList(okResponse));
+        when(business.riskLimitsListBehavioralEvaluationsV0(EMPTY_ID)).thenReturn(Collections.emptyList());
     }
 
     @Test
     public void givenExistentIDWhenGetCustomerInfoThenReturnData() {
-        ServiceResponse<List<DtoOutListBehavioralEvaluationsGet>> response = facade.riskLimitsListBehavioralEvaluationsV0("OK");
+        ServiceResponse<List<DtoOutListBehavioralEvaluationsGet>> response = facade.riskLimitsListBehavioralEvaluationsV0(OK_ID);
 
-        assertEquals("OK", response.getData().get(0).getId());
+        assertEquals(OK_ID, response.getData().get(0).getId());
         assertEquals("exclusion reason code", response.getData().get(0).getExclusionReasonCode());
         assertEquals("risk group", response.getData().get(0).getRiskGroup());
         assertEquals(BigDecimal.valueOf(123), response.getData().get(0).getLastSalaryAccreditation());
@@ -75,11 +76,14 @@ public class ISrvRiskLimitsAPIBehavioralEvaluationsFacadeTest {
         assertEquals(HttpStatus.OK.value(), response.getHttpStatus(HttpMethod.GET));
     }
 
-    @Test
+    @Test(expected = BusinessServiceException.class)
     public void givenNonExistentIDWhenGetCustomerInfoThenReturnError() {
-        ServiceResponse<List<DtoOutListBehavioralEvaluationsGet>> response = facade.riskLimitsListBehavioralEvaluationsV0("NOT_FOUND");
+        facade.riskLimitsListBehavioralEvaluationsV0(EMPTY_ID);
+    }
 
-        assertNull(response);
+    @Test(expected = BusinessServiceException.class)
+    public void givenIncorrectIDWhenGetCustomerInfoThenReturnError() {
+        facade.riskLimitsListBehavioralEvaluationsV0(INCORRECT_ID);
     }
 
 }

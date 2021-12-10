@@ -19,9 +19,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import com.bbva.jee.arq.spring.core.servicing.gce.BusinessServiceException;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import static org.apache.commons.lang.math.NumberUtils.isNumber;
 
 @Service
 @SN(registryID = "SNAR20210087", logicalID = "risk-limits")
@@ -40,13 +43,20 @@ public class SrvRiskLimitsAPIBehavioralEvaluationsV0 implements ISrvRiskLimitsAP
   @Consumes({MediaType.APPLICATION_JSON})
   public ServiceResponse<List<DtoOutListBehavioralEvaluationsGet>> riskLimitsListBehavioralEvaluationsV0(@QueryParam("customerid") String customerid) {
 
+    if (customerid == null || customerid.isEmpty()) {
+      throw new BusinessServiceException("mandatoryParametersMissing");
+    }
+    if (!isNumber(customerid)) {
+      throw new BusinessServiceException("invalidParameters");
+    }
+
     final List<BDtoOutListBehavioralEvaluationsGet> internalResponse = riskLimitsListBehavioralEvaluationsV0.riskLimitsListBehavioralEvaluationsV0(customerid);
 
     ListBehavioralEvaluationsGetMapper mapper = Mappers.getMapper(ListBehavioralEvaluationsGetMapper.class);
     List<DtoOutListBehavioralEvaluationsGet> response = mapper.bDtoOutListListBehavioralEvaluationsGetToDtoOutListListBehavioralEvaluationsGet(internalResponse);
 
     if (response.isEmpty()) {
-      return null;
+      throw new BusinessServiceException("noContent");
     }
 
     ServiceResponseBuilder<List<DtoOutListBehavioralEvaluationsGet>> builder = ServiceResponseOK.data(response);

@@ -34,7 +34,7 @@ public class RiskLimitsListBehavioralEvaluationsV0BusinessTest {
         MockitoAnnotations.initMocks(this);
 
         BDtoOutListBehavioralEvaluationsGet okResponse = mock(BDtoOutListBehavioralEvaluationsGet.class);
-        when(okResponse.getId()).thenReturn("OK");
+        when(okResponse.getId()).thenReturn("customerId");
         when(okResponse.getExclusionReasonCode()).thenReturn("exclusion reason code");
         when(okResponse.getRiskGroup()).thenReturn("risk group");
         when(okResponse.getLastSalaryAccreditation()).thenReturn(BigDecimal.valueOf(123));
@@ -52,15 +52,15 @@ public class RiskLimitsListBehavioralEvaluationsV0BusinessTest {
         when(okResponse.getRiskSegment()).thenReturn(riskSegmentGet);
 
 
-        when(iAchptDao.getCustomerInfo("OK")).thenReturn(Collections.singletonList(okResponse));
+        when(iAchptDao.getCustomerInfo("customerId")).thenReturn(Collections.singletonList(okResponse));
         when(iAchptDao.getCustomerInfo("EMPTY")).thenReturn(Collections.emptyList());
     }
 
     @Test
     public void givenExistentIDWhenGetCustomerInfoThenReturnData() {
-        List<BDtoOutListBehavioralEvaluationsGet> response =  bSrv.riskLimitsListBehavioralEvaluationsV0("OK");
+        List<BDtoOutListBehavioralEvaluationsGet> response =  bSrv.riskLimitsListBehavioralEvaluationsV0("customerId");
 
-        assertEquals("OK", response.get(0).getId());
+        assertEquals("customerId", response.get(0).getId());
         assertEquals("exclusion reason code", response.get(0).getExclusionReasonCode());
         assertEquals("risk group", response.get(0).getRiskGroup());
         assertEquals(BigDecimal.valueOf(123), response.get(0).getLastSalaryAccreditation());

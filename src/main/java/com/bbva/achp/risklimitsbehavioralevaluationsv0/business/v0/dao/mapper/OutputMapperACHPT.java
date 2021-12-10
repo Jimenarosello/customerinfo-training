@@ -5,6 +5,7 @@ import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dto.BDtoOutLi
 import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dto.BDtoOutListBehavioralEvaluationsLastPayrollIncomeGet;
 import com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0.dto.BDtoOutListBehavioralEvaluationsRiskSegmentGet;
 import com.bbva.jee.arq.spring.core.host.IMapper;
+import org.osgi.framework.ServiceException;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -15,6 +16,9 @@ public class OutputMapperACHPT implements IMapper<ResponseTransactionAchpt001_1,
     @Override
     public List<BDtoOutListBehavioralEvaluationsGet> map(ResponseTransactionAchpt001_1 response) {
         BDtoOutListBehavioralEvaluationsGet bDtoOutListBehavioralEvaluationsGet = new BDtoOutListBehavioralEvaluationsGet();
+
+        bDtoOutListBehavioralEvaluationsGet.setResponseCode(response.getCodigoRetorno());
+        bDtoOutListBehavioralEvaluationsGet.setResponseMessage(response.getCodigoAviso());
 
         bDtoOutListBehavioralEvaluationsGet.setId(response.getId());
         bDtoOutListBehavioralEvaluationsGet.setExclusionReasonCode(String.valueOf(response.getExclusionReasonCode()));
