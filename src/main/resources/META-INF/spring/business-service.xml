@@ -38,16 +38,16 @@
 
 	<!-- Declaracion de modulo de servicios -->
 	<servicing:module-metadata
-    service-logical-id="risk-limits"
-    application-name="achp"
+    service-logical-id="customers"
+    application-name="uuaa"
     service-version="v0"
-    resource-id="behavioral-evaluations"
+    resource-id="customers"
   />
 	<!-- beans de cxf -->
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
-	<context:component-scan base-package="com.bbva.achp.risklimitsbehavioralevaluationsv0">
+	<context:component-scan base-package="com.bbva.uuaa.customersv0">
 		<context:exclude-filter expression=".*_Roo_.*" type="regex"/>
 		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
 	</context:component-scan>
@@ -70,7 +70,7 @@
       <entry key="json" value="application/json"/>
     </jaxrs:extensionMappings>
     <jaxrs:serviceBeans>
-      <ref bean="srvRiskLimitsAPIBehavioralEvaluationsV0"/>
+      <ref bean="srvCustomersV0"/>
     </jaxrs:serviceBeans>
   </jaxrs:server>
 </beans>

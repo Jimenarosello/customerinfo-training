@@ -7,12 +7,12 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 	    <fileSet>
-        <directory>target/classes/com/bbva/achp/risklimitsbehavioralevaluationsv0/business</directory>
-        <outputDirectory>com/bbva/achp/risklimitsbehavioralevaluationsv0/business</outputDirectory>
+        <directory>target/classes/com/bbva/uuaa/customersv0/business</directory>
+        <outputDirectory>com/bbva/uuaa/customersv0/business</outputDirectory>
       </fileSet>
 	  <fileSet>
-        <directory>target/classes/com/bbva/achp/risklimitsbehavioralevaluationsv0/common</directory>
-        <outputDirectory>com/bbva/achp/risklimitsbehavioralevaluationsv0/common</outputDirectory>
+        <directory>target/classes/com/bbva/uuaa/customersv0/common</directory>
+        <outputDirectory>com/bbva/uuaa/customersv0/common</outputDirectory>
       </fileSet>
 	    <fileSet>
         <directory>target/classes/META-INF</directory>

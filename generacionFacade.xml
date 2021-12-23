@@ -7,8 +7,8 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>target/classes/com/bbva/achp/risklimitsbehavioralevaluationsv0/facade</directory>
-			<outputDirectory>com/bbva/achp/risklimitsbehavioralevaluationsv0/facade</outputDirectory>
+			<directory>target/classes/com/bbva/uuaa/customersv0/facade</directory>
+			<outputDirectory>com/bbva/uuaa/customersv0/facade</outputDirectory>
 		</fileSet>
 	</fileSets>
 </assembly>

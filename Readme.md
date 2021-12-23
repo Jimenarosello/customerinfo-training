@@ -1,1 +1,1 @@
-GET /behavioral-evaluations
+GET /customers

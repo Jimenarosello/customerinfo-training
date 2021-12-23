@@ -1,7 +1,7 @@
 {
 	"services": [
 		{
-			"logicalId": "riskLimitsListBehavioralEvaluationsV0",
+			"logicalId": "customersListCustomersV0",
 			"registryId": "SMGG20211896",
 			"input": {
 				"parameters": [],

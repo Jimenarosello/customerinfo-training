@@ -1,12 +1,12 @@
 aso-metadata:
-    uuaa            : achp
+    uuaa            : uuaa
     sn              : SNAR20210087
-    name            : risk-limits
+    name            : customers
     type            : service
     country         : ar
     version         : 0.1.0-SNAPSHOT
     platformVersion : R4
     flavour         : old
-    namespace       : ar.achp.app-id-585450.dsg
-    repoName        : RiskLimitsBehavioralEvaluationsV0
+    namespace       : ar.uuaa.app-id-585450.dsg
+    repoName        : CustomersV0
     multilocal      : false

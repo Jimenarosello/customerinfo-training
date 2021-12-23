@@ -9,11 +9,11 @@
     <version>5.12.3.29</version>
   </parent>
 
-  <groupId>com.bbva.achp.risklimitsbehavioralevaluationsv0</groupId>
-  <artifactId>achp_risklimitsbehavioralevaluationsv0</artifactId>
+  <groupId>com.bbva.uuaa.customersv0</groupId>
+  <artifactId>uuaa_customersv0</artifactId>
   <packaging>jar</packaging>
   <version>0.1.0-SNAPSHOT</version>
-  <name>achp_risklimitsbehavioralevaluationsv0</name>
+  <name>uuaa_customersv0</name>
 
   <repositories />
   <pluginRepositories />
@@ -188,14 +188,14 @@
         <artifactId>kermit-maven-plugin</artifactId>
         <version>1.0.1</version>
         <configuration>
-          <packageName>com.bbva.achp.risklimitsbehavioralevaluationsv0.business.v0</packageName>
+          <packageName>com.bbva.uuaa.customersv0.business.v0</packageName>
           <lombok>true</lombok>
           <transactions>
             <transaction>
-              <copy>ACHPT001-01-AR.xml</copy>
+              <copy>uuaaT001-01-AR.xml</copy>
               <protocol>APX</protocol>
               <version>01</version>
-              <name>ACHPT001</name>
+              <name>uuaaT001</name>
             </transaction>
           </transactions>
         </configuration>
