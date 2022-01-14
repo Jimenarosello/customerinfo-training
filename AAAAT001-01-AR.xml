@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transaction xmlns="http://www.w3schools.com" transactionName="AAAAT001" application="AAAA" version="01" country="AR" language="ES">
+	<paramsIn>
+		<parameter order="1" name="customerId" mandatory="1" type="String" size="8"/>
+	</paramsIn>
+	<paramsOut>
+		<dto order="1" name="customer" mandatory="0" package="com.bbva.aaaa.dto.training.CustomerDTO" artifactId="AAAAC001">
+			<parameter order="1" name="id" mandatory="0" type="Long" size="20"/>
+			<parameter order="2" name="accountNumber" mandatory="0" type="String" size="20"/>
+			<parameter order="3" name="dni" mandatory="0" type="Long" size="8"/>
+			<parameter order="4" name="name" mandatory="0" type="String" size="20"/>
+			<parameter order="5" name="lastname" mandatory="0" type="String" size="20"/>
+			<parameter order="6" name="dateOfBirth" mandatory="0" type="Date (YYYY-MM-DD)" size="0"/>
+			<list order="7" name="cards" mandatory="0">
+				<dto order="1" name="Type" mandatory="0" package="com.bbva.aaaa.dto.training.CardDTO" artifactId="AAAAC001">
+					<parameter order="1" name="cardNumber" mandatory="0" type="String" size="20"/>
+					<parameter order="2" name="type" mandatory="0" type="String" size="7"/>
+					<parameter order="3" name="cardHolder" mandatory="0" type="Long" size="20"/>
+					<parameter order="4" name="purchaseLimit" mandatory="0" type="Double" size="10"/>
+					<parameter order="5" name="expirationDate" mandatory="0" type="Date (YYYY-MM)" size="0"/>
+				</dto>
+			</list>
+		</dto>
+	</paramsOut>
+	<description>Training Transaction</description>
+</transaction>

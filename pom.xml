@@ -192,10 +192,10 @@
           <lombok>true</lombok>
           <transactions>
             <transaction>
-              <copy>TRANSACCION.xml</copy>
+              <copy>AAAAT001-01-AR.xml</copy>
               <protocol>APX</protocol>
               <version>01</version>
-              <name>NOMBRE</name>
+              <name>AAAAT001</name>
             </transaction>
           </transactions>
         </configuration>
